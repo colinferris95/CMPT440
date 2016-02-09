@@ -1,0 +1,12 @@
+10 pts
+
+Essays discuss the assigned topic correctly, but the organization is a bit
+awckward.
+
+It seems like you did not even check the PDF before submitting it.
+
+You could use $\Sigma$ more to save some space. Lets say that you want to make
+an arrow if the next symbol is not an 'f', you could simply say $\{\Sigma - f\}$,
+which means the set of all possible symbols of the whole alphabet minus 'f'.
+
+- Dr. Rivas
