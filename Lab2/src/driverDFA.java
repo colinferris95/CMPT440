@@ -5,15 +5,23 @@ import java.io.InputStreamReader;
 /**
  * Created by colin on 2/10/2016.
  */
-abstract class driverDFA {
-    private int state;
-    static private int [][] delta;
+public class driverDFA {
+    public static void main(String[] args){
+        ManWolf d = new ManWolf();
 
-    abstract boolean accepted();
-    abstract int inputNumber(char in);
-    abstract void reset();
-    abstract void process(String in);
+        d.process(args[0]);
 
 
+        if (d.accepted() == true){
 
+            System.out.println("That is a solution"); // dfa.accepted is true and the solution passed
+
+        }
+        else {
+            System.out.println("That is not a solution"); // dfa.accepted is false and the solution has failed
+
+        }
+
+
+}
 }

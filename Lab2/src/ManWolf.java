@@ -72,29 +72,6 @@ public class ManWolf {
     }
 
 
-    public static void main(String[] args){
-        ManWolf dfa = new ManWolf();
-
-        dfa.process(args[0]);
-
-
-        if (dfa.accepted() == true){
-
-            System.out.println("That is a solution"); // dfa.accepted is true and the solution passed
-
-        }
-        else {
-            System.out.println("That is not a solution"); // dfa.accepted is false and the solution has failed
-
-        }
-
-
-
-
-    }
-
-
-
 
 
 }
