@@ -1,0 +1,76 @@
+8 pts
+
+Correctness:
+
+- The program produces correct output.
+
+- The program produces output in the correct format.
+
+
+Style:
+
+- Both files have major style problems. You are not following the style
+  guidelines.
+
+- Incorrect indentation in both the driver and ManWolf files. Please use a
+  two-space indentation.
+
+- Poor block comments
+
+- Both files are missing the header. Remember: Each file must have a block
+  comment at the top which gives the name of the file, the student's name, the
+  assignment, the date, the version, and a comment about what is contained in
+  the file. For example:
+/**
+ * file: SinglyLinkedList.java
+ * author: student name
+ * course: CMPT 220
+ * assignment: project 1
+ * due date: August 30, 2003
+ * version: 1.3
+ * 
+ * This file contains the declaration of the SinglyLinkedList abstract data
+ * type.
+ */
+
+- Both files have incorrect method header formatting. Each function must have a
+  comment block before it, which gives the function name, describes each
+  parameter and the return value (if any), and explains the purpose of the
+  function. Refer to the parameters by name, not by type. Here is an example:
+/**
+ * factorial
+ *
+ * This function computes the factorial of the given input. The factorial is
+ * defined as factorial(n) = n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1.
+ * 
+ * Parameters:
+ *   n: the number on which to compute the factorial
+ * 
+ * Return value: the factorial of n, or 1 if n <= 0.
+ */
+public static int factorial(int n) {
+    if (n <= 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+- Code (or comments) go beyond 100 characters. Keep lines of code short.
+  Optimally 80 characters, but no more than 100.
+
+
+Efficiency and Other Comments:
+
+- Program is efficient as implemented.
+
+- The driverDFA.java file is incorrecly named as: ManWolf.java
+
+- The ManWolf.java file is incorrectly named as: Driver.java 
+
+
+CSV files:
+
+- CSV files contain State-transition table and description of states.
+
+
+- Dr. Rivas
