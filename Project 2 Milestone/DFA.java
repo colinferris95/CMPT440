@@ -86,12 +86,14 @@ public class DFA {
 		        case 'a':
 		          return 2;	        	
 		        case 'r' :
-		        	if ( state == 24){
-		          return 3;
-		        	}
-		        	else {
+		        	    	
+		        	if ( state == Q1 ){
 		          return 5;
 		        	}
+		        	else {
+		          return 3;
+		        	}
+		        	
 		        case 'p' :
 			      return 4;
 		        case 'i' :
@@ -128,7 +130,7 @@ public class DFA {
 		        case ')':
 				      return 17;  
 		        default:
-		        	return 49;
+		        	return 0;
 		      }
 		       
 		           
@@ -159,15 +161,23 @@ public boolean process(String in){
     for (int i=0; i < in.length(); i++){
         char c = in.charAt(i);
         int input = this.inputNumberState(c); //the current input as a number
+        System.out.println("input from case switch " + input);//debug
+        try{
         state = delta[state][input];
+        System.out.println(state);// debug
+        } catch (ArrayIndexOutOfBoundsException ex){
+        	state = Q49;
+        }
     }
         
   	  if (state == Q11 ||state == Q27 ||state == Q36 ||state == Q47 ||state == Q48 ) {
       	System.out.println("true");
+      	System.out.println(state);// debug
       	return true;
 	  }    
       else {
-	        	System.out.println("false");
+	        	System.out.println(state); //debug
+	        	reset();
 	        	return false;
 	        	
 	        
