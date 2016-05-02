@@ -55,7 +55,7 @@ public class DFA {
 	  
 	  private static int state = Q0;
 	  
-	  
+	  public String currentPhrase = "";
 	  
 	  
 	  
@@ -173,6 +173,7 @@ public boolean process(String in){
   	  if (state == Q11 ||state == Q27 ||state == Q36 ||state == Q47 ||state == Q48 ) {
       	System.out.println("true");
       	System.out.println(state);// debug
+      	
       	return true;
 	  }    
       else {

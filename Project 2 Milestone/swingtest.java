@@ -20,11 +20,14 @@ import java.awt.event.*;
 
 import javax.swing.*;
 import javax.swing.filechooser.*;
-
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class swingtest extends JFrame
 					   {
 	
+	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,17 +44,66 @@ public class swingtest extends JFrame
 	public swingtest() {
 		getContentPane().setLayout(null);
 		
-		final JTextArea textArea = new JTextArea();
+		
+		
+		final JTextPane textArea = new JTextPane();
+		
+		
+		
+		
+			
+	
+		
+		
 		textArea.setBounds(88, 49, 419, 327);
 		getContentPane().add(textArea);
+		
+
+		/*
+		Timer t = new Timer( );
+		t.scheduleAtFixedRate(new TimerTask() {
+		
+		   
+		    public void run() {
+		    	DFA tester = new DFA();
+				System.out.println(tester.process(textArea.getText()));
+				if (tester.process(textArea.getText()) == false){
+					textArea.setFont(new Font("Serif", Font.PLAIN, 14));
+					textArea.setForeground(new Color(0xe63900));
+					
+				}
+				
+		    }
+		}, 1000,5000);
+		*/
 		
 		JButton btnWillItBlend = new JButton("Will it blend?");
 		btnWillItBlend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				DFA tester = new DFA();
-				System.out.println(tester.process(textArea.getText()));
+				boolean processResult = tester.process(textArea.getText());
+				System.out.println(processResult);
+				
+				if (processResult){
+					
+					textArea.setFont(new Font("Serif", Font.PLAIN, 14));
+					textArea.setForeground(new Color(0x1affa3));// green
+					
+					
+				}
+				else{
+					textArea.setFont(new Font("Serif", Font.PLAIN, 14));
+					textArea.setForeground(new Color(0xe63900)); //red
+					
+				}
+				
+				
+				
 			}
+			
 		});
+		
+		
 		btnWillItBlend.setBounds(343, 417, 210, 23);
 		getContentPane().add(btnWillItBlend);
 		
@@ -71,10 +123,24 @@ public class swingtest extends JFrame
 
             
             public void actionPerformed(ActionEvent arg0) {
-                JFileChooser saveFile = new JFileChooser();
-                saveFile.showSaveDialog(null);
-            }
-        });
+            	//JFileChooser saveFile = new JFileChooser();
+            	
+            	//saveFile.showOpenDialog(null);
+            	
+            	String saveName= JOptionPane.showInputDialog("Save File As... ");
+            	System.out.println(saveName);
+            	FileWriter pw;
+				try {
+					pw = new FileWriter (saveName);
+					textArea.write(pw);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+                
+            }  
+        }
+        );
         
 
         open.addActionListener(new ActionListener() {
