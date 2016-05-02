@@ -170,11 +170,12 @@ public boolean process(String in){
         }
     }
         
-  	  if (state == Q11 ||state == Q27 ||state == Q36 ||state == Q47 ||state == Q48 ) {
+  	  if (state == Q11 ||state == Q27 || state == Q32 || state == Q36 ||state == Q47 ||state == Q48 ) {
       	System.out.println("true");
       	System.out.println(state);// debug
-      	
+      	state = Q0;
       	return true;
+      	
 	  }    
       else {
 	        	System.out.println(state); //debug
@@ -190,7 +191,7 @@ public boolean process(String in){
 	  // Create DFA matrix
 	  private static int [][] delta = {
 		  //{a-z}v  a   r   p  r   i   n    t {0-9} _  -   +   =    *    " (    )
-/*q0*/		{Q28,Q23,Q28,Q28,Q1,Q28,Q28,Q28,Q28,Q49,Q49,Q49,Q49,Q49,Q42,Q49,Q49,Q49},
+/*q0*/		{Q28,Q23,Q28,Q28,Q1,Q28,Q28,Q28,Q28,Q49,Q49,Q49,Q49,Q49,Q41,Q49,Q49,Q49},
 /*q1*/	    {Q49,Q49,Q49,Q2,Q49,Q2,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q2*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q3,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q3*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q4,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
@@ -222,7 +223,7 @@ public boolean process(String in){
 /*q29*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q30,Q49,Q49,Q49,Q49},
 /*q30*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q31,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q31*/	    {Q48,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q32,Q49,Q49,Q49,Q49,Q49,Q37,Q49,Q49},
-/*q32*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q33,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
+/*q32*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q32,Q33,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q33*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q34,Q49,Q49,Q49,Q49,Q49},
 /*q34*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q35,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q35*/	    {Q36,Q36,Q36,Q36,Q36,Q36,Q36,Q36,Q36,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
@@ -235,7 +236,7 @@ public boolean process(String in){
 /*q42*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q43,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q43*/	    {Q44,Q44,Q44,Q44,Q44,Q44,Q44,Q44,Q44,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q44*/	    {Q44,Q44,Q44,Q44,Q44,Q44,Q44,Q44,Q44,Q49,Q45,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
-/*q45*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q46,Q49,Q49},
+/*q45*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q46,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q46*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q47,Q49,Q49,Q49},
 /*q47*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q48*/	    {Q48,Q48,Q48,Q48,Q48,Q48,Q48,Q48,Q48,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},

@@ -81,6 +81,7 @@ public class swingtest extends JFrame
 		btnWillItBlend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				DFA tester = new DFA();
+				
 				boolean processResult = tester.process(textArea.getText());
 				System.out.println(processResult);
 				
