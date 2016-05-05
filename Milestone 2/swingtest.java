@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -20,6 +21,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 import javax.swing.filechooser.*;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,7 +29,8 @@ public class swingtest extends JFrame
 					   {
 	
 	
-
+	Color textColor1 = new Color(0, 204, 153);; //default green 0, 204, 153
+	Color textColor2 = new Color(204, 0, 0); //default red
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,6 +44,7 @@ public class swingtest extends JFrame
 		});
 	}
 	
+	
 	public swingtest() {
 		getContentPane().setLayout(null);
 		
@@ -49,13 +53,13 @@ public class swingtest extends JFrame
 		final JTextPane textArea = new JTextPane();
 		
 		
-		
-		
-			
 	
 		
+			
 		
-		textArea.setBounds(88, 49, 419, 327);
+		
+		
+		textArea.setBounds(0, 0, 609, 406);
 		getContentPane().add(textArea);
 		
 
@@ -77,6 +81,7 @@ public class swingtest extends JFrame
 		}, 1000,5000);
 		*/
 		
+		
 		JButton btnWillItBlend = new JButton("Will it blend?");
 		btnWillItBlend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -88,13 +93,13 @@ public class swingtest extends JFrame
 				if (processResult){
 					
 					textArea.setFont(new Font("Serif", Font.PLAIN, 14));
-					textArea.setForeground(new Color(0x1affa3));// green
+					textArea.setForeground(textColor1);// green
 					
 					
 				}
 				else{
 					textArea.setFont(new Font("Serif", Font.PLAIN, 14));
-					textArea.setForeground(new Color(0xe63900)); //red
+					textArea.setForeground(textColor2); //red
 					
 				}
 				
@@ -115,6 +120,103 @@ public class swingtest extends JFrame
 		JButton save = new JButton("Save");
 		save.setBounds(136, 417, 89, 23);
 		getContentPane().add(save);
+		
+		String[] colorSchemes = { "Color1" , "Color2", "Color3" };
+		
+		JComboBox comboBox = new JComboBox(colorSchemes);
+		comboBox.setBounds(246, 417, 63, 20);
+		getContentPane().add(comboBox);
+		
+		comboBox.addActionListener(new ActionListener() {
+			 public void actionPerformed(ActionEvent arg0) {
+				 JComboBox cb = (JComboBox)arg0.getSource();
+			     String colorChoice = (String)cb.getSelectedItem();
+			     
+			     Color myGreen = new Color (0, 204, 153);
+			     
+			     Color myWhite = new Color(255, 255, 255);
+			     
+			     Color myPink = new Color(255,204,204);
+			     
+			     Color myDark = new Color (0,51,102);
+			     
+			     Color myPurple = new Color (102,102,255);
+			     
+			     Color myBlue = new Color (0, 102, 255);
+			     
+			     
+			     if (colorChoice == "Color1"){
+			    	 textArea.setBackground(myWhite);
+			    	 textColor1 = myGreen;
+			    	 DFA tester = new DFA();
+						
+						boolean processResult = tester.process(textArea.getText());
+						System.out.println(processResult);
+						
+						if (processResult){
+							
+							textArea.setFont(new Font("Serif", Font.PLAIN, 14));
+							textArea.setForeground(textColor1);// green
+							
+							
+						}
+						else{
+							textArea.setFont(new Font("Serif", Font.PLAIN, 14));
+							textArea.setForeground(textColor2); //red
+							
+						}
+			    	 
+			     }
+				 
+			     if (colorChoice == "Color2"){
+			    	 textArea.setBackground(myPink);
+			    	 textColor1 = myBlue;
+			    	 DFA tester = new DFA();
+						
+						boolean processResult = tester.process(textArea.getText());
+						System.out.println(processResult);
+						
+						if (processResult){
+							
+							textArea.setFont(new Font("Serif", Font.PLAIN, 14));
+							textArea.setForeground(textColor1);// green
+							
+							
+						}
+						else{
+							textArea.setFont(new Font("Serif", Font.PLAIN, 14));
+							textArea.setForeground(textColor2); //red
+							
+						}
+			    	 
+			     }
+			     
+			     if (colorChoice == "Color3"){
+			    	 textArea.setBackground(myDark);
+			    	 textColor1 = myWhite;
+			    	 
+			    	 DFA tester = new DFA();
+						
+						boolean processResult = tester.process(textArea.getText());
+						System.out.println(processResult);
+						
+						if (processResult){
+							
+							textArea.setFont(new Font("Serif", Font.PLAIN, 14));
+							textArea.setForeground(textColor1);// green
+							
+							
+						}
+						else{
+							textArea.setFont(new Font("Serif", Font.PLAIN, 14));
+							textArea.setForeground(textColor2); //red
+							
+						}
+			     }
+			     
+			 }
+			
+		});
 		
 		
 		
@@ -179,7 +281,6 @@ public class swingtest extends JFrame
 		
 		
 	}
-	
 }
 
 
