@@ -50,12 +50,15 @@ public class DFA {
 	  private static final int Q47 = 47;
 	  private static final int Q48 = 48;
 	  private static final int Q49 = 49;
-
-	  
+	  private static final int Q50 = 50;
+	  private static final int Q51 = 51;
+	  private static final int Q52 = 52;
+	  private static final int Q53 = 53;
+	  private static final int Q54 = 54;
 	  
 	  private static int state = Q0;
 	  
-	  public String currentPhrase = "";
+	
 	  
 	  
 	  
@@ -170,7 +173,7 @@ public boolean process(String in){
         }
     }
         
-  	  if (state == Q11 ||state == Q27 || state == Q32 || state == Q36 ||state == Q47 ||state == Q48 ) {
+  	  if (state == Q11 ||state == Q27 || state == Q32 || state == Q36 ||state == Q47 ||state == Q48 ||state == Q50 ||state == Q54) {
       	System.out.println("true");
       	System.out.println(state);// debug
       	state = Q0;
@@ -191,7 +194,7 @@ public boolean process(String in){
 	  // Create DFA matrix
 	  private static int [][] delta = {
 		  //{a-z}v  a   r   p  r   i   n    t {0-9} _  -   +   =    *    " (    )
-/*q0*/		{Q28,Q23,Q28,Q28,Q1,Q28,Q28,Q28,Q28,Q49,Q49,Q49,Q49,Q49,Q41,Q49,Q49,Q49},
+/*q0*/		{Q28,Q23,Q28,Q28,Q1,Q28,Q28,Q28,Q28,Q50,Q49,Q49,Q49,Q49,Q41,Q49,Q49,Q49},
 /*q1*/	    {Q49,Q49,Q49,Q2,Q49,Q2,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q2*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q3,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q3*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q4,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
@@ -240,8 +243,12 @@ public boolean process(String in){
 /*q46*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q47,Q49,Q49,Q49},
 /*q47*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q0,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q48*/	    {Q48,Q48,Q48,Q48,Q48,Q48,Q48,Q48,Q48,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
-
-
+/*q49*/		{Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
+/*q50*/		{Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q50,Q51,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
+/*q51*/     {Q0,Q0,Q0,Q0,Q0,Q0,Q0,Q0,Q0,Q0,Q0,Q0,Q52,Q0,Q0,Q0,Q0,Q0},
+/*q52*/		{Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q53,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
+/*q53*/     {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q54,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
+/*q54*/		{Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q54,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 	  };
 	  
 	  
