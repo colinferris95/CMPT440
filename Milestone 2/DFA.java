@@ -173,7 +173,7 @@ public boolean process(String in){
         }
     }
         
-  	  if (state == Q11 ||state == Q27 || state == Q32 || state == Q36 ||state == Q47 ||state == Q48 ||state == Q50 ||state == Q54) {
+  	  if (state == Q11 ||state == Q27 || state == Q32 || state == Q36 ||state == Q40 ||state == Q47 ||state == Q48 ||state == Q50 ||state == Q54) {
       	System.out.println("true");
       	System.out.println(state);// debug
       	state = Q0;
@@ -194,7 +194,7 @@ public boolean process(String in){
 	  // Create DFA matrix
 	  private static int [][] delta = {
 		  //{a-z}v  a   r   p  r   i   n    t {0-9} _  -   +   =    *    " (    )
-/*q0*/		{Q28,Q23,Q28,Q28,Q1,Q28,Q28,Q28,Q28,Q50,Q49,Q49,Q49,Q49,Q41,Q49,Q49,Q49},
+/*q0*/		{Q28,Q23,Q28,Q28,Q1,Q28,Q28,Q28,Q28,Q50,Q49,Q49,Q49,Q49,Q41,Q37,Q49,Q49},
 /*q1*/	    {Q49,Q49,Q49,Q2,Q49,Q2,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q2*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q3,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q3*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q4,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
@@ -231,7 +231,7 @@ public boolean process(String in){
 /*q34*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q35,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q35*/	    {Q36,Q36,Q36,Q36,Q36,Q36,Q36,Q36,Q36,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q36*/	    {Q36,Q36,Q36,Q36,Q36,Q36,Q36,Q36,Q36,Q49,Q0,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
-/*q37*/	    {Q38,Q38,Q38,Q38,Q38,Q38,Q38,Q38,Q38,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
+/*q37*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q38,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q38*/	    {Q38,Q38,Q38,Q38,Q38,Q38,Q38,Q38,Q38,Q49,Q39,Q49,Q49,Q49,Q49,Q49,Q49,Q49},
 /*q39*/	    {Q38,Q38,Q38,Q38,Q38,Q38,Q38,Q38,Q38,Q49,Q49,Q49,Q49,Q49,Q49,Q40,Q49,Q49},
 /*q40*/	    {Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q49,Q0,Q49,Q49,Q49,Q49,Q49,Q49,Q49},

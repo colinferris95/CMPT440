@@ -59,7 +59,7 @@ public class swingtest extends JFrame
 		
 		
 		
-		textArea.setBounds(0, 0, 609, 406);
+		textArea.setBounds(0, 44, 609, 362);
 		getContentPane().add(textArea);
 		
 
@@ -82,7 +82,7 @@ public class swingtest extends JFrame
 		*/
 		
 		
-		JButton btnWillItBlend = new JButton("Will it blend?");
+		JButton btnWillItBlend = new JButton("Check Highlighting");
 		btnWillItBlend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				DFA tester = new DFA();
@@ -126,6 +126,10 @@ public class swingtest extends JFrame
 		JComboBox comboBox = new JComboBox(colorSchemes);
 		comboBox.setBounds(246, 417, 63, 20);
 		getContentPane().add(comboBox);
+		
+		JLabel lblColinsEditor = new JLabel("Colin's Editor");
+		lblColinsEditor.setBounds(261, 0, 200, 50);
+		getContentPane().add(lblColinsEditor);
 		
 		comboBox.addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent arg0) {
